@@ -3,7 +3,7 @@ import png
 from pyqrcode import QRCode
 
 link = input("Enter QR Code content : ")
-name = input("Enter QR Code name : ") or qrcode
+name = input("Enter QR Code name : ") or "qrcode"
 
 qr = pyqrcode.create(link)
 
