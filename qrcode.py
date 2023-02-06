@@ -1,12 +1,25 @@
 import pyqrcode
 import png
 from pyqrcode import QRCode
+from colorama import Fore
 
-link = input("Enter QR Code content : ")
-name = input("Enter QR Code name : ") or "qrcode"
+i = 0
 
-qr = pyqrcode.create(link)
+while True:
 
-qr.png(name + ".png", scale = 6)
+    check = input("Generate QRCode ? Y/N ")
+    if check == "Y":
+        link = input("Enter QR Code content : ")
+        name = input("Enter QR Code name : ") or "qrcode"
 
-print("QR Code has been generated ! Find the generated QR Code in", name, ".png")
+        qr = pyqrcode.create(link)
+
+        qr.png(f"{name or 'qrcode'}_{i+1}.png", scale = 6)
+
+        print("QR Code has been generated ! Find the generated QR Code as .png file")
+        print("  ")
+        i +=1
+
+    elif check == "N":
+        print(Fore.MAGENTA + "You've generated", i, "QRCode")
+        break
