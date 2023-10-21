@@ -8,7 +8,7 @@ i = 0
 while True:
 
     check = input("Generate QRCode ? Y/N ")
-    if check == "Y":
+    if check == "Y" or check == "y":
         link = input("Enter QR Code content : ")
         name = input("Enter QR Code name : ") or "qrcode"
 
@@ -20,6 +20,6 @@ while True:
         print("  ")
         i +=1
 
-    elif check == "N":
+    elif check == "N" or check == "n":
         print(Fore.MAGENTA + "You've generated", i, "QRCode")
         break
